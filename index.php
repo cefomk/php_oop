@@ -1,17 +1,24 @@
 <?php
+// require_once './Classes/Voiture.php';
+// require_once './Classes/Fruit.php';
+// require_once './Classes/User.php';
 
-// https://www.php.net/manual/fr/language.oop5.php
+// function my_autoloader($class)
+// {
+//     include 'Classes/' . $class . '.php';
+// }
+// spl_autoload_register('my_autoloader');
 
-require_once './Classes/Voiture.php';
-require_once './Classes/Fruit.php';
-require_once './Classes/User.php';
+spl_autoload_register(function ($class) {
+    include 'Classes/' . $class . '.php';
+});
 
 // $citadine = new Voiture();
 // var_dump($citadine);
 
 // echo $citadine->couleur;
-// $citadine->acceler();
-// echo $citadine->acceler();
+// $citadine->acceler(50);
+// echo $citadine->acceler(50);
 
 // echo 'Ma voiture a ' . Voiture::ROUE . ' roues.';
 // echo Voiture::$jante;
