@@ -16,7 +16,7 @@ class Voiture
     {
         // echo 'La methode Construct est appelé.';      
     }
-    
+
     public function setCouleur($couleurProp)
     {
         $this->couleur = $couleurProp;
@@ -43,7 +43,6 @@ class Voiture
     {
         // echo 'Couleur de la voiture: ' . $this->couleur;
     }
-
 };
 
 // $citadine = new Voiture();
@@ -67,7 +66,7 @@ class Voiture
 // class Fruit
 // {
 //     private $nomFruit;
-    
+
 //     public function __get($nom)
 //     {
 //         // return "L'attribut (propriete) $nom est innacessible";
@@ -102,20 +101,48 @@ class Voiture
 
 // $objet = new Maclasse("Bonjour à vous !");
 
+// class User
+// {
+//     private $userName;
+
+//     public function __construct($name)
+//     {
+//      $this->userName = $name;   
+//     }
+
+//     public function getName()
+//     {
+//         return $this->userName;
+//     }
+// }
+
+// $bill = new User('Bill Cargo');
+// echo $bill->getName();
+
 class User
 {
-    private $userName;
+    // public $name = "Jane Doe";
+    protected $name = "Jane Doe";
 
-    public function __construct($name)
+    public function methode1()
     {
-     $this->userName = $name;   
+        $userName = $this->name;
+        $userName = "Je suis l'utilisateur: $userName";
+        return $userName;
     }
-
-    public function getName()
+}
+class Admin extends User
+{
+    public function methode2()
     {
-        return $this->userName;
+        // $userName = User::methode1();
+        $userName = parent::methode1();
+        // $userName = $this->name;
+        $userName = "Je suis l'utilisateur {$userName} dans la classe Admin";
+        return $userName;
     }
 }
 
-$bill = new User('Bill Cargo');
-echo $bill->getName();
+$user1 = new Admin();
+// var_dump($user1->methode1());
+var_dump($user1->methode2());
