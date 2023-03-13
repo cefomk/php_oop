@@ -119,30 +119,48 @@ class Voiture
 // $bill = new User('Bill Cargo');
 // echo $bill->getName();
 
-class User
-{
-    // public $name = "Jane Doe";
-    protected $name = "Jane Doe";
+// class User
+// {
+//     // public $name = "Jane Doe";
+//     protected $name = "Jane Doe";
 
-    public function methode1()
+//     public function methode1()
+//     {
+//         $userName = $this->name;
+//         $userName = "Je suis l'utilisateur: $userName";
+//         return $userName;
+//     }
+// }
+// class Admin extends User
+// {
+//     public function methode2()
+//     {
+//         // $userName = User::methode1();
+//         $userName = parent::methode1();
+//         // $userName = $this->name;
+//         $userName = "Je suis l'utilisateur {$userName} dans la classe Admin";
+//         return $userName;
+//     }
+// }
+
+// $user1 = new Admin();
+// // var_dump($user1->methode1());
+// var_dump($user1->methode2());
+
+abstract class A
+{
+    public function methode()
     {
-        $userName = $this->name;
-        $userName = "Je suis l'utilisateur: $userName";
-        return $userName;
+        echo "Bonjour Abstract !";
     }
 }
-class Admin extends User
-{
-    public function methode2()
-    {
-        // $userName = User::methode1();
-        $userName = parent::methode1();
-        // $userName = $this->name;
-        $userName = "Je suis l'utilisateur {$userName} dans la classe Admin";
-        return $userName;
-    }
+class B extends A
+{    
+    // public function methode()
+    // {
+    //     echo "Bonjour Abstract heritage !";
+    // }
 }
 
-$user1 = new Admin();
-// var_dump($user1->methode1());
-var_dump($user1->methode2());
+$objet = new B();
+$objet->methode();
