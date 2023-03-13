@@ -64,23 +64,58 @@ class Voiture
 //  $sport = new Voiture();
 //  echo $sport->acceler(20);
 
-class Fruit
-{
-    private $nomFruit;
+// class Fruit
+// {
+//     private $nomFruit;
     
-    public function __get($nom)
+//     public function __get($nom)
+//     {
+//         // return "L'attribut (propriete) $nom est innacessible";
+//         return $this->nomFruit;
+//     }
+
+//     public function __set($nom,$val)
+//     {
+//         $this->$nom = $val;
+//     }
+
+// }
+
+// $pomme = new Fruit();
+// $pomme->nomFruit = 'Pomme Golden';
+// echo $pomme->nomFruit;
+
+// class Maclasse
+// {
+//     private $str;
+
+//     public function __construct($param)
+//     {
+//      $this->str = $param;   
+//     }
+
+//     public function __toString()
+//     {
+//         return $this->str;
+//     }
+// }
+
+// $objet = new Maclasse("Bonjour à vous !");
+
+class User
+{
+    private $userName;
+
+    public function __construct($name)
     {
-        // return "L'attribut (propriete) $nom est innacessible";
-        return $this->nomFruit;
+     $this->userName = $name;   
     }
 
-    public function __set($nom,$val)
+    public function getName()
     {
-        $this->$nom = $val;
+        return $this->userName;
     }
-
 }
 
-$pomme = new Fruit();
-$pomme->nomFruit = 'Pomme Golden';
-echo $pomme->nomFruit;
+$bill = new User('Bill Cargo');
+echo $bill->getName();
