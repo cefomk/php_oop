@@ -11,7 +11,7 @@ class MaClasse
     }
 }
 
-// $obj = new \Html\MaClasse();
-$obj = new \Code\Html\MaClasse();
-$obj->titre = "Cours OOP";
-$obj->message();
+// // $obj = new \Html\MaClasse();
+// $obj = new \Code\Html\MaClasse();
+// $obj->titre = "Cours OOP";
+// $obj->message();
